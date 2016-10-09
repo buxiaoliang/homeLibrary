@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li><%= link_to 'Listing articles', articles_path %></li>
+    <li class="active"><%= link_to 'New article', new_article_path %></li>
+</ul>
+
+<h1>New Article</h1>
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %>
