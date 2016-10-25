@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li><%= link_to 'Listing stuffs', stuffs_path %></li>
+    <li class="active"><%= link_to 'New stuff', new_stuff_path %></li>
+</ul>
+
+<h1>New Stuff</h1>
+<%= render 'form' %>
+
+<%= link_to 'Back', stuffs_path %>

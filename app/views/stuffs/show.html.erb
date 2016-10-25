@@ -1,0 +1,27 @@
+<p>
+    <strong>Name:</strong>
+    <%= @stuff.name %>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= @stuff.description %>
+</p>
+
+<p>
+    <strong>Image:</strong>
+    <%= image_tag url_for(:controller => "stuffs", :action => "show_image", :id => @stuff.id) %>
+</p>
+
+<p>
+    <strong>Location:</strong>
+    <%= @stuff.location_id %>
+</p>
+
+<p>
+    <strong>Type:</strong>
+    <%= @stuff.type_id %>
+</p>
+
+<%= link_to 'Back', stuffs_path %>
+| <%= link_to 'Edit', edit_stuff_path(@stuff) %>
