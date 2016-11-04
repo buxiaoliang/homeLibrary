@@ -1,31 +1,41 @@
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><%= link_to 'Listing stuffs', stuffs_path %></li>
-    <li><%= link_to 'New stuff', new_stuff_path %></li>
+  <li class="active"><%= link_to 'Listing stuffs', stuffs_path %></li>
+  <li><%= link_to 'New stuff', new_stuff_path %></li>
 </ul>
 
 <h1>Listing stuffs</h1>
 
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Location</th>
-        <th>Type</th>
-    </tr>
+<%= form_tag(stuffs_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Stuffs" %>
+  <%= submit_tag "Search" %>
+<% end %>
 
-    <% @stuffs.each do |stuff| %>
+<p></p>
+<% if @stuffs.present? %>
+  <table class="table">
       <tr>
-          <td><%= stuff.name %></td>
-          <td><%= stuff.description %></td>
-          <td><%= stuff.location.name if stuff.location  %></td>
-          <td><%= stuff.type.name if stuff.type %></td>
-          <td><%= link_to 'Show', stuff_path(stuff), class: 'btn btn-primary btn-xs' %></td>
-          <td><%= link_to 'Edit', edit_stuff_path(stuff), class: 'btn btn-info btn-xs' %></td>
-          <td><%= link_to 'Destroy', stuff_path(stuff),
-                          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Type</th>
       </tr>
-    <% end %>
-</table>
+
+      <% @stuffs.each do |stuff| %>
+        <tr>
+            <td><%= stuff.name %></td>
+            <td><%= stuff.description %></td>
+            <td><%= stuff.location.name if stuff.location  %></td>
+            <td><%= stuff.type.name if stuff.type %></td>
+            <td><%= link_to 'Show', stuff_path(stuff), class: 'btn btn-primary btn-xs' %></td>
+            <td><%= link_to 'Edit', edit_stuff_path(stuff), class: 'btn btn-info btn-xs' %></td>
+            <td><%= link_to 'Destroy', stuff_path(stuff),
+                            method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+        </tr>
+      <% end %>
+  </table>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
 
 <%= link_to new_stuff_path, class: 'btn btn-success' do %>
   <i class="glyphicon glyphicon-plus"></i> New stuff

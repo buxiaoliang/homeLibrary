@@ -63,6 +63,11 @@ class StuffsController < ApplicationController
 
   def index
     @stuffs = Stuff.all
+    if params[:search]
+      @stuffs = Stuff.search(params[:search]).order("created_at DESC")
+    else
+      @stuffs = Stuff.all.order('created_at DESC')
+    end
   end
 
   # private: need to be at end of class
