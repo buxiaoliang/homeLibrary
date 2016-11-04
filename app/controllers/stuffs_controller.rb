@@ -26,6 +26,32 @@ class StuffsController < ApplicationController
     end
   end
 
+  def edit
+    @stuff = Stuff.find(params[:id])
+  end
+
+  def update
+    @stuff = Stuff.find(params[:id])
+
+    respond_to do |format|
+      if @stuff.update(stuff_params)
+        flash[:success] = 'New stuff was successfully updated.'
+        format.html { redirect_to @stuff }
+      else
+        flash[:danger] = 'There was a problem updating the Todo.'
+        format.html { render :edit }
+        format.json { render json: @todo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @stuff = Stuff.find(params[:id])
+    @stuff.destroy
+
+    redirect_to stuffs_path
+  end
+
   def show
     @stuff = Stuff.find(params[:id])
   end
