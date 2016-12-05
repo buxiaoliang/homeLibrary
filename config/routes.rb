@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'login' => 'sessions#new'
+
+  post 'login' => 'sessions#create'
+
+  delete 'logout' => 'sessions#destroy'
+
+  get 'signup' => 'users#new'
+
   get 'welcome/index'
 
   get 'stuffs/show_image'
@@ -16,6 +24,8 @@ Rails.application.routes.draw do
   resources :locations
 
   resources :types
+
+  resources :users
 
   root 'welcome#index'
 

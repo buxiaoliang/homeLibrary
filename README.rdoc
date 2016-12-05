@@ -5,21 +5,29 @@ This is project to maintain stuffs in home including books, clothes etc.
 == Configuration
 
 == Database
+* rails g model User name:string email:string password_digest:string remember_digest:string --force
+* rake db:migrate
 
 == Services
 
 == How to run
 
-Rails server
+rails server
 
 http://localhost:3000/
 
 == How to develop
 * rails new blog
 * rake routes
-* rails g controller articles
+* rails g controller articles: rails g controller users(controller name) new(action name)
 * rails g model articles
-* rake db:migrate
+* bundle install: install listed gem in Gemfile
+
+== Console
+rails console
+
+Example:
+User.create(name: "Michael Hartl", email: "mhartl@example.com",password: "foobar", password_confirmation: "foobar")
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
