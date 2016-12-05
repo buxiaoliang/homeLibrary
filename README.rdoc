@@ -14,6 +14,12 @@ Rails server
 
 http://localhost:3000/
 
+== How to develop
+* rails new blog
+* rake routes
+* rails g controller articles
+* rails g model articles
+* rake db:migrate
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
