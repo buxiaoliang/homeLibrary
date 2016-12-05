@@ -1,27 +1,18 @@
-== README
+== Home Library
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is project to maintain stuffs in home including books, clothes etc.
 
-Things you may want to cover:
+== Configuration
 
-* Ruby version
+== Database
 
-* System dependencies
+== Services
 
-* Configuration
+== How to run
 
-* Database creation
+Rails server
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://localhost:3000/
 
 
 Please feel free to use a different markup language if you do not plan to run
