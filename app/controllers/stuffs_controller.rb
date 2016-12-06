@@ -72,7 +72,7 @@ class StuffsController < ApplicationController
 
   # private: need to be at end of class
   private
-      def stuff_params
+    def stuff_params
       params.require(:stuff).permit(:name, :description, :location_id, :type_id)
     end
 end
