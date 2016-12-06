@@ -8,7 +8,18 @@
 </head>
 <body>
 
-
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <%= link_to "Home Library Management", '#', id: "logo" %>
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Home",   '#' %></li>
+                <li><%= link_to "Help",   '#' %></li>
+                <li><%= link_to "Log in", '#' %></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 <div id="main-container" class="container-fluid">
     <div class="row">
@@ -19,20 +30,25 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">Listing stuffs <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">New stuff</a></li>
-            </ul>
-        </div>
-        <div class="col-xs-3">
-            <h3>Home Library Management</h3>
-        </div>
         <div class="col-xs-9">
             <%= yield %>
         </div>
     </div>
 </div>
+
+<footer class="footer">
+    <small>
+        The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+        by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+    </small>
+    <nav>
+        <ul>
+            <li><%= link_to "About",   '#' %></li>
+            <li><%= link_to "Contact", '#' %></li>
+            <li><a href="http://news.railstutorial.org/">News</a></li>
+        </ul>
+    </nav>
+</footer>
 
 </body>
 </html>
