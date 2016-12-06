@@ -16,9 +16,9 @@ class ArticlesController < ApplicationController
         flash[:success] = 'New article was successfully created.'
         format.html { redirect_to @article }
       else
-        flash[:danger] = 'There was a problem creating the Todo.'
+        flash[:danger] = 'There was a problem creating the article.'
         format.html { render :new }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,9 +40,9 @@ class ArticlesController < ApplicationController
         flash[:success] = 'New article was successfully updated.'
         format.html { redirect_to @article }
       else
-        flash[:danger] = 'There was a problem updating the Todo.'
+        flash[:danger] = 'There was a problem updating the article.'
         format.html { render :edit }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end

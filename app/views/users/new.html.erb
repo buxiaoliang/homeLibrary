@@ -3,7 +3,8 @@
 <%= form_for(@user, html: {class: 'form-horizontal'}) do |f| %>
   <% if @user.errors.any? %>
     <div class="error_explanation">
-        <h2>Form is invalid</h2>
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+            this user from being saved:</h2>
         <ul>
             <% for message in @user.errors.full_messages %>
               <li><%= message %></li>
