@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   include SessionsHelper
+  skip_before_filter :require_login
   def create
     login = params[:session][:login]
     password = params[:session][:password]
