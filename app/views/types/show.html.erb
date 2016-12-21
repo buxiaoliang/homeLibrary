@@ -1,0 +1,13 @@
+<p>
+    <strong>Name:</strong>
+    <%= @type.name %>
+</p>
+
+<p>
+    <strong>Text:</strong>
+    <%= @type.description %>
+</p>
+
+
+<%= link_to 'Back', types_path %>
+| <%= link_to 'Edit', edit_type_path(@type) %>

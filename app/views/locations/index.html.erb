@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs" role="tablist">
+    <li><%= link_to 'Listing stuffs', stuffs_path %></li>
+    <li><%= link_to 'New stuff', new_stuff_path %></li>
+    <li class="active"><%= link_to 'Listing locations', locations_path %></li>
+    <li><%= link_to 'New location', new_location_path %></li>
+    <li><%= link_to 'Listing types', types_path %></li>
+    <li><%= link_to 'New type', new_type_path %></li>
+</ul>
+
+<h1>Listing locations</h1>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+
+    <% @locations.each do |location| %>
+      <tr>
+          <td><%= location.name %></td>
+          <td><%= location.description %></td>
+          <td><%= link_to 'Show', location_path(location), class: 'btn btn-primary btn-xs' %></td>
+          <td><%= link_to 'Edit', edit_location_path(location), class: 'btn btn-info btn-xs' %></td>
+          <td><%= link_to 'Destroy', location_path(location),
+                          method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+</table>
+
+<%= link_to new_location_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> New location
+<% end %>

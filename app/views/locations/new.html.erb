@@ -1,13 +1,13 @@
 <ul class="nav nav-tabs" role="tablist">
     <li><%= link_to 'Listing stuffs', stuffs_path %></li>
-    <li class="active"><%= link_to 'New stuff', new_stuff_path %></li>
+    <li><%= link_to 'New stuff', new_stuff_path %></li>
     <li><%= link_to 'Listing locations', locations_path %></li>
-    <li><%= link_to 'New location', new_location_path %></li>
+    <li class="active"><%= link_to 'New location', new_location_path %></li>
     <li><%= link_to 'Listing types', types_path %></li>
     <li><%= link_to 'New type', new_type_path %></li>
 </ul>
 
-<h1>New Stuff</h1>
+<h1>New Location</h1>
 <%= render 'form' %>
 
-  <%= link_to 'Back', stuffs_path %>
+<%= link_to 'Back', locations_path %>
