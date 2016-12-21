@@ -29,5 +29,25 @@ rails console
 Example:
 User.create(name: "Michael Hartl", email: "mhartl@example.com",password: "foobar", password_confirmation: "foobar")
 
+== Heroku
+
+https://immense-earth-27752.herokuapp.com/
+
+Run in Heroku:
+* heroku version
+* heroku login
+* heroku keys:add
+* heroku create
+* git push heroku master
+
+Heroku commands:
+* heroku run rake db:migrate
+* heroku run bash
+* heroku ps:scale web=1
+* heroku ps
+* heroku open
+* heroku logs --tail
+* heroku run rails console
+
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
